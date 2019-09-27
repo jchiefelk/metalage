@@ -25,6 +25,7 @@ class ElementTraceAssay(models.Model):
 
 class Metal(models.Model):
     museum_number=models.CharField(max_length=255)
+    time_period=models.CharField(max_length=50)
     country=models.CharField(max_length=50)
     site=models.CharField(max_length=255)
     description=models.CharField(max_length=50)
