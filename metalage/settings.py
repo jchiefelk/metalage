@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'graphene_django',
-    'apps.metal'
+    'apps.metal',
+    'django_filters'
 ]
 
 GRAPHENE = {
