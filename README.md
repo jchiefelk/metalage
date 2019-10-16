@@ -22,4 +22,34 @@ source myenv/bin/activate
 pip install -r requirements.txt
 </pre>
 
-<p>4) Download trace element data from my dropbox account <a href="https://www.dropbox.com/sh/dd32etpuv0cb5v6/AABUlFdTff_-tfsiTI-xFIqUa?dl=0">https://www.dropbox.com/sh/dd32etpuv0cb5v6/AABUlFdTff_-tfsiTI-xFIqUa?dl=0</a></p>
+<p>4) Run migrations</p>
+<pre>
+./manage.py makemigrations
+</pre>
+
+<p>5) Download trace element data from my dropbox account <a href="https://www.dropbox.com/sh/dd32etpuv0cb5v6/AABUlFdTff_-tfsiTI-xFIqUa?dl=0">https://www.dropbox.com/sh/dd32etpuv0cb5v6/AABUlFdTff_-tfsiTI-xFIqUa?dl=0</a></p>
+
+
+<p>6) Install postgres on your machine and create metal_age.conf and save in root project directory</p>
+<pre>
+[database]
+host=localhost
+port=5432
+user=postgres
+password=
+name=metal_age
+
+[secret]
+key=*4pz7m&#4-vlkwcy25z=_ns&svtju9r9^l8d&0mmmf80q(hco%
+</pre>
+
+<p>7) Import data into postgres by using runscripts in scripts folder</p>
+
+<pre>
+./manage.py runscripts import_element_trace_to_psql --script-args /dirname/csv_data_from_dropbox
+</pre>
+
+<p>8)Start server and go to http://localhost:8000/api/graphql to start making queries</p>
+<pre>
+./manage.py runserver
+</pre>
