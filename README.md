@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ./manage.py makemigrations
 </pre>
 
-<p>5) Download trace element data from my dropbox account <a href="https://www.dropbox.com/sh/dd32etpuv0cb5v6/AABUlFdTff_-tfsiTI-xFIqUa?dl=0">https://www.dropbox.com/sh/dd32etpuv0cb5v6/AABUlFdTff_-tfsiTI-xFIqUa?dl=0</a></p>
+<p>5) Download trace element data from my dropbox account <a href="https://www.dropbox.com/sh/y48c1omuo4x70mw/AAANXT_9m4aSSqCu8V_Wu34oa?dl=0">https://www.dropbox.com/sh/y48c1omuo4x70mw/AAANXT_9m4aSSqCu8V_Wu34oa?dl=0</a></p>
 
 
 <p>6) Install postgres on your machine and create metal_age.conf and save in root project directory</p>
