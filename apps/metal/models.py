@@ -84,11 +84,20 @@ class ElementTraceAssay(models.Model):
     tin_percent = models.CharField(max_length=50, blank=True, null=True)
 
 
+class IsotopeTraceAssay(models.Model):
+    analysis_method = models.CharField(max_length=50, blank=True, null=True)
+    delta_copper_65 = models.CharField(max_length=50, blank=True, null=True)
+    lead_208_to_206 = models.CharField(max_length=50, blank=True, null=True)
+    lead_207_to_206 = models.CharField(max_length=50, blank=True, null=True)
+    lead_206_to_204 = models.CharField(max_length=50, blank=True, null=True)
+
+
 class Metal(models.Model):
     museum_number=models.CharField(max_length=255)
     time_period=models.CharField(max_length=50)
     country=models.CharField(max_length=50)
     site=models.CharField(max_length=255)
-    description=models.CharField(max_length=50)
+    description=models.CharField(max_length=255)
     source=models.CharField(max_length=255)
     element_trace_assay_id = models.ForeignKey(ElementTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
+    isotope_trace_assay_id = models.ForeignKey(IsotopeTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
