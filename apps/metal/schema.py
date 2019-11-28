@@ -9,7 +9,7 @@ from .models import IsotopeTraceAssay
 class MetalObjects(DjangoObjectType):
     class Meta:
         model = Metal
-        filter_fields = ['country', 'site', 'museum_number', 'source']
+        filter_fields = ['country', 'site', 'museum_number', 'source', 'description']
         interfaces = (graphene.relay.Node, )
 
 
