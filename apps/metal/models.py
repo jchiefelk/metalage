@@ -93,11 +93,21 @@ class IsotopeTraceAssay(models.Model):
 
 
 class Metal(models.Model):
-    museum_number=models.CharField(max_length=255)
-    time_period=models.CharField(max_length=50)
-    country=models.CharField(max_length=50)
-    site=models.CharField(max_length=255)
-    description=models.CharField(max_length=255)
-    source=models.CharField(max_length=255)
+    museum_number = models.CharField(max_length=255)
+    time_period = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
+    site = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    source = models.CharField(max_length=255)
+    element_trace_assay_id = models.ForeignKey(ElementTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
+    isotope_trace_assay_id = models.ForeignKey(IsotopeTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
+
+
+class Ore(models.Model):
+    museum_number = models.CharField(max_length=255)
+    country = models.CharField(max_length=50)
+    site = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    source = models.CharField(max_length=255)
     element_trace_assay_id = models.ForeignKey(ElementTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
     isotope_trace_assay_id = models.ForeignKey(IsotopeTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
