@@ -108,6 +108,7 @@ class Ore(models.Model):
     country = models.CharField(max_length=50)
     site = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
+    mineral = models.CharField(max_length=50, null=True)
     source = models.CharField(max_length=255)
     element_trace_assay_id = models.ForeignKey(ElementTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
     isotope_trace_assay_id = models.ForeignKey(IsotopeTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
