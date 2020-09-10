@@ -40,7 +40,7 @@ password=
 name=metal_age
 
 [secret]
-key=*4pz7m&#4-vlkwcy25z=_ns&svtju9r9^l8d&0mmmf80q(hco%
+key=
 </pre>
 
 <p>7) Import data into postgres by using runscripts in scripts folder</p>
