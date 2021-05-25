@@ -11,24 +11,24 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import pdb
 
 from django.core.exceptions import ImproperlyConfigured
 import configparser
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = os.getcwd()
 # Load the configuration files. This gives the django project flexibility so
 # that it can run in other environments (local, remote) seamlessly, with all
 # the differences and specifics for each environment being handled in the
 # config file.
-DATA_PORTAL_CONFIG_FILE_PATH = os.path.join(BASE_DIR,
-                                             'metal_age.conf')
-if not os.path.exists(DATA_PORTAL_CONFIG_FILE_PATH):
+CONFIG_FILE_PATH = os.path.join(BASE_DIR, 'metal_age.conf')
+if not os.path.exists(CONFIG_FILE_PATH):
     raise ImproperlyConfigured("Failed to locate configuration file. Expected "
-                               "path: {}".format(DATA_PORTAL_CONFIG_FILE_PATH))
+                               "path: {}".format(CONFIG_FILE_PATH))
+
 CONFIG = configparser.ConfigParser(allow_no_value=True)
-CONFIG.read(DATA_PORTAL_CONFIG_FILE_PATH)
+CONFIG.read(CONFIG_FILE_PATH)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -40,7 +40,6 @@ SECRET_KEY = '*4pz7m&#4-vlkwcy25z=_ns&svtju9r9^l8d&0mmmf80q(hco%'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -54,13 +53,13 @@ INSTALLED_APPS = [
     'django_extensions',
     'graphene_django',
     'django_filters',
+    'corsheaders',
     'apps.metal',
-    'corsheaders'
 ]
 
-GRAPHENE = {
-    'SCHEMA': 'apps.metal.schema.schema'
-}
+# GRAPHENE = {
+#     'SCHEMA': 'apps.metal.schema.schema'
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,7 +79,7 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
 )
 
-ROOT_URLCONF = 'metalage.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -98,7 +97,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'metalage.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
