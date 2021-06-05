@@ -82,6 +82,14 @@ class ElementTraceAssay(models.Model):
     selenium_percent = models.CharField(max_length=50, blank=True, null=True)
     tellurium_percent = models.CharField(max_length=50, blank=True, null=True)    
     tin_percent = models.CharField(max_length=50, blank=True, null=True)
+    iridium_ppm = models.CharField(max_length=50, blank=True, null=True)
+    osmium_ppm = models.CharField(max_length=50, blank=True, null=True)
+    ruthenium_99_ppm = models.CharField(max_length=50, blank=True, null=True)
+    ruthenium_101_ppm = models.CharField(max_length=50, blank=True, null=True)
+    palladium_105_ppm = models.CharField(max_length=50, blank=True, null=True)
+    palladium_106_ppm = models.CharField(max_length=50, blank=True, null=True)
+    palladium_108_ppm = models.CharField(max_length=50, blank=True, null=True)    
+    rhenium_ppm = models.CharField(max_length=50, blank=True, null=True)
 
 
 class IsotopeTraceAssay(models.Model):
@@ -93,12 +101,13 @@ class IsotopeTraceAssay(models.Model):
 
 
 class Metal(models.Model):
-    museum_number = models.CharField(max_length=255)
-    time_period = models.CharField(max_length=50)
-    country = models.CharField(max_length=50)
-    site = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    source = models.CharField(max_length=255)
+    museum_number = models.CharField(max_length=255, blank=True, null=True)
+    time_period = models.CharField(max_length=50, blank=True, null=True)
+    country = models.CharField(max_length=50, blank=True, null=True)
+    site = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    source = models.CharField(max_length=255, blank=True, null=True)
+    mineral = models.CharField(max_length=255, blank=True, null=True)
     element_trace_assay_id = models.ForeignKey(ElementTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
     isotope_trace_assay_id = models.ForeignKey(IsotopeTraceAssay, on_delete=models.CASCADE, blank=True, null=True)
 
