@@ -1,4 +1,17 @@
 <h1>metalage</h1>
+
+<h3>Update after some years of Staleness</h3>
+
+<p>
+  I have re-verified the data, and provided a Mineral Field for Ore sources. I've also added some new data sources to the "DB" for now. Here is the source data on DropBox.
+  
+  https://www.dropbox.com/scl/fo/wxjfdnnpm1yt42elmfz0t/AB_3pkRQOTEAx1Dds2rVlPc?rlkey=pr6yfkezgc392x22irbk6fywi&st=jhzangwb&dl=0
+
+  I am working on a simpler way of performing Data Visualizations with just the CSV data using Pandas and Plotly.
+</p>
+
+<h3>Deprecated DB</h3>
+
 <p>
 This is a GraphQL API for querying trace element data from Bronze and Iron Age artifacts, and ore sources from Earth.  The data is collected from peer-reviewed academic journals, the Oxford Archaeological Lead Isotope Database from the Isotrace Laboratory (OXALID), and the Mark Hill Laboratory's database on Old Copper Culture artifacts and North American ore sources.
 </p>
